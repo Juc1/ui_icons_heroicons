@@ -1,0 +1,82 @@
+heroicons:
+  enabled: true
+  label: Hero
+  description: "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS."
+  links:
+    - https://heroicons.com/solid
+    - https://github.com/tailwindlabs/heroicons/?tab=readme-ov-file#basic-usage
+  version: 2.1.5
+  license:
+    name: MIT
+    url: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - node_modules/heroicons/24/solid/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: Fill color
+      type: "string"
+      format: "color"
+  template: >-
+    <svg
+      class="heroicon icon-{{ icon_id|clean_class }}"
+      fill="{{ color|default('currentColor') }}"
+      viewBox="0 0 24 24"
+      width="{{ size|default(32) }}"
+      height="{{ size|default(32) }}"
+    >
+      {{ content }}
+    </svg>
+
+# Outline version is not using {group} with solid because of different settings
+# and template.
+heroicons_outline:
+  enabled: true
+  label: Hero outline
+  description: "Beautiful hand-crafted SVG icons, by the makers of Tailwind CSS."
+  links:
+    - https://heroicons.com/outline
+    - https://github.com/tailwindlabs/heroicons/?tab=readme-ov-file#basic-usage
+  version: 2.1.5
+  license:
+    name: MIT
+    url: https://github.com/tailwindlabs/heroicons/blob/master/LICENSE
+    gpl-compatible: true
+  extractor: svg
+  config:
+    sources:
+      - node_modules/heroicons/24/outline/{icon_id}.svg
+  settings:
+    size:
+      title: "Size"
+      type: "integer"
+      default: 32
+    color:
+      title: Stroke color
+      type: "string"
+      format: "color"
+    stroke_width:
+      title: "Stroke width"
+      type: "number"
+      default: 1.5
+      minimum: 1.0
+      maximum: 2.0
+      multipleOf: 0.1
+  template: >-
+    <svg
+      class="heroicon icon-{{ icon_id|clean_class }}"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="{{ color|default('currentColor') }}"
+      stroke-width="{{ stroke_width|default(1.5) }}"
+      width="{{ size|default(32) }}"
+      height="{{ size|default(32) }}"
+    >
+      {{ content }}
+    </svg>

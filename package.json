@@ -1,0 +1,8 @@
+{
+  "name": "ui_icons_heroicons",
+  "private": true,
+  "license": "ISC",
+  "dependencies": {
+    "heroicons": "^2.2.0"
+  }
+}
