@@ -1,0 +1,17 @@
+{
+  "name": "juc1/ui_icons_heroicons",
+  "description": "Heroicons integration for Drupal's UI Icons system",
+  "type": "drupal-module",
+  "license": "GPL-2.0-or-later",
+  "authors": [
+    {
+      "name": "Ju",
+      "homepage": "https://github.com/Juc1"
+    }
+  ],
+  "require": {
+    "drupal/ui_icons": "^1.0"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
